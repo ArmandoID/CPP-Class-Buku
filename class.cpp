@@ -5,8 +5,7 @@ using namespace std;
 
 class Buku {
     protected:
-        string judul;
-        string pengarang;
+        string judul, pengarang;
         int tahunTerbit;
     public:
         Buku(string judul, string pengarang, int tahunTerbit) {
@@ -16,6 +15,7 @@ class Buku {
         }
 
         void tampilkanInfo() {
+            cout << "\n📖 Informasi Buku 📖\n";
             cout << "Judul Buku: " << judul << '\n';
             cout << "Nama Pengarang: " << pengarang << '\n';
             cout << "Tahun Terbit: " << tahunTerbit << endl;
@@ -23,7 +23,19 @@ class Buku {
 };
 
 int main() {
-    Buku buku1("Atomic Habits", "James Clear", 2018);
+    string judul, pengarang;
+    int tahunTerbit;
+
+    cout << "Masukkan judul buku: ";
+    getline(cin, judul);
+
+    cout << "Masukkan nama pengarang: ";
+    getline(cin, pengarang);
+
+    cout << "Masukkan tahun terbit: ";
+    cin >> tahunTerbit;
+
+    Buku buku1(judul, pengarang, tahunTerbit);
     buku1.tampilkanInfo();
     
     return 0;
