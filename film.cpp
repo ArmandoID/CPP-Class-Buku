@@ -21,16 +21,20 @@ class Film {
             cout << "Masukkan genre film: ";
             getline(cin, this->genre);
         
-            cout << "Masukkan durasi film: ";
+            cout << "Masukkan durasi film (dalam menit): ";
             cin >> this->durasi;
         }
 
         void tampilkanInfo() {
+            int jam = durasi / 60;
+            int menit = durasi % 60;
+        
             cout << "\n🎥 Informasi Film 🎥\n";
             cout << "Judul Film: " << judul << '\n';
             cout << "Genre Film: " << genre << '\n';
-            cout << "Durasi Film: " << durasi << endl;
+            cout << "Durasi Film: " << jam << " jam " << menit << " menit\n";
         }
+        
 };
 
 int main() {
